@@ -1,0 +1,67 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	font-family: Gotham Rounded, sans-serif;
+	font-weight: normal;
+}
+
+body {
+	margin: 0;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	padding: 0;
+	background-image: url("https://st-gdefon.gallery.world/wallpapers_original/649084_gallery.world.jpg");
+	background-repeat: round;
+}
+
+.calculator-grid {
+	margin: 10px;
+	width: 450px;
+	border: 3px solid black;
+	border-radius: 6px;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	min-height: 95vh;
+	grid-template-columns: repeat(4, 100px);
+	grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+	background-color: #57565D;
+}
+
+.calculator-grid > button {
+	color: white;
+	background-color: #353339;
+	border-radius: 7px;
+	cursor: pointer;
+	font-size: 2rem;
+	outline: none;
+	margin: 4px;
+}
+
+.calculator-grid > button:hover {
+	background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two {
+	grid-column: span 2;
+}
+
+.output {
+	background-color: #759172;
+	border: 2px solid black;
+	border-radius: 7px;
+	margin: 4px;
+	padding: 10px;
+	grid-column: 1 / -1;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
+	flex-direction: column;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.output .current-operand {
+	color: black;
+	font-size: 2.5rem;
+}
