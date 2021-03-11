@@ -164,40 +164,41 @@ function parseSqrtSeparatedExpression(expression) {
 }
 
 function assemble(arr, operation) {
-  let accumulator = arr[0] * 10 || 0.0;
+  arr = arr.map(Number);
+  let accumulator = arr[0];
   arr = arr.slice(1);
   switch (operation) {
     case '+':
       arr.forEach(function(el) {
-        accumulator += el * 10;
+        accumulator += el;
       });
-      accumulator = accumulator / 10;
+      accumulator = (accumulator.toFixed(16)) * 1;
       break;
     case '-':
       arr.forEach(function(el) {
-        accumulator -= el * 10;
+        accumulator -= el;
       });
-      accumulator = accumulator / 10;
+      accumulator = (accumulator.toFixed(16)) * 1;
       break;
     case '*':
       arr.forEach(function(el) {
-        accumulator *= el * 10;
+        accumulator *= el;
       });
-      accumulator = accumulator / (Math.pow(10, arr.length) * 10);
+      accumulator = (accumulator.toFixed(16)) * 1;
       break;
     case '÷':
       arr.forEach(function(el) {
-        accumulator = (accumulator * 10) / (el * 10);
+        accumulator = accumulator / el;
       });
-      accumulator = (accumulator / 10);
+      accumulator = (accumulator.toFixed(16)) * 1;
       break;
     case '^':
-      const base = accumulator / 10;
+      const base = accumulator;
       const exponentiation = arr[0];
       for (let i = 1; i < exponentiation; i++) {
         accumulator = accumulator * base;
       }
-      accumulator = accumulator / 10;
+      accumulator = (accumulator.toFixed(16)) * 1;
       break;
     default:
       accumulator = new Error('Something wrong');
