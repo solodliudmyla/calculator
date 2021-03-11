@@ -36,10 +36,11 @@ body {
 	font-size: 2rem;
 	outline: none;
 	margin: 4px;
+	opacity: 0.8;
 }
 
 .calculator-grid > button:hover {
-	background-color: rgba(255, 255, 255, .9);
+	opacity: 1;
 }
 
 .span-two {
