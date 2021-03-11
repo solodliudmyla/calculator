@@ -66,3 +66,12 @@ body {
 	color: black;
 	font-size: 2.5rem;
 }
+
+@media (max-width: 500px) {
+	.calculator-grid {
+		width: 300px;
+		min-height: 80vh;
+		grid-template-columns: repeat(4, 70px);
+		grid-template-rows: minmax(120px, auto) repeat(5, 60px);
+	}
+}
