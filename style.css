@@ -10,8 +10,9 @@ body {
 	justify-content: center;
 	align-content: center;
 	padding: 0;
-	background-image: url("https://st-gdefon.gallery.world/wallpapers_original/649084_gallery.world.jpg");
-	background-repeat: round;
+	background-image: url("img/wood.jpg");
+	background-position: center;
+  background-size: cover;
 }
 
 .calculator-grid {

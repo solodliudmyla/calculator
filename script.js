@@ -57,7 +57,7 @@ function ifRootOfNegative(expression) {
   if ((expression.includes('√')) && (expression.includes('-'))) {
     for (let i = 0; i < expression.length; i++) {
       if (expression[i] === '√' && expression[i + 1] === '-') {
-        return ('square root of negative number!');
+        return ('Square root of negative number!');
       } else if (expression[i] === '-' && expression[i + 1] === '√') {
         return parsePlusSeparatedExpression(expression);
       } else {
@@ -188,9 +188,13 @@ function assemble(arr, operation) {
       break;
     case '÷':
       arr.forEach(function(el) {
-        accumulator = accumulator / el;
+        if (el){
+          accumulator = accumulator / el;
+          accumulator = (accumulator.toFixed(16)) * 1;
+        }else{
+          return accumulator = 'Division by zero!';
+        }
       });
-      accumulator = (accumulator.toFixed(16)) * 1;
       break;
     case '^':
       const base = accumulator;
